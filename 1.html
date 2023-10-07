@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 1</title>
+</head>
+
+<body>
+    <h1>Notas de um Aluno</h1>
+    <h2>
+        <p>Aluno:<span id="aluno"></span></p>
+        <p>Primeira Nota:<span id="n1"></span></p>
+        <p>Segunda Nota: <span id="n2"></span></p>
+        <p>Terceira Nota: <span id="n3"></span></p>
+        <p>Situação: <span id="situacao"></span></p>
+        <p>Notas em ordem decrescente: <span id="ndecre"></span></p>
+    </h2>
+
+    <script>
+        let aluno = prompt("Digite o nome do Aluno");
+        let n1 = Number(prompt("Digite a primeira nota"));
+        let n2 = Number(prompt("Digite a segunda nota"));
+        let n3 = Number(prompt("Digite a terceira nota"));
+        let ma;
+        let mb;
+        let mc;
+        let situacao;
+        let media
+        
+        media = (n1 + n2 + n3) / 3;
+
+        if (media >= 6) {
+            situacao = "Aprovado"
+        } else {
+            situacao = "Reprovado"
+        }
+
+        switch (true) {
+            case n1 >= n2 && n1 > n3:
+                ma = n1;
+                if (n2 > n3) {
+                    mb = n2;
+                    mc = n3;
+                } else {
+                    mb = n3;
+                    mc = n2;
+                }
+                break;
+            case n2 >= n1 && n2 > n3:
+                ma = n2;
+                if (n1 > n3) {
+                    mb = n1;
+                    mc = n3;
+                } else {
+                    mb = n3;
+                    mc = n1;
+                }
+                break;
+            case n3 >= n2 && n3 > n1:
+                ma = n3;
+                if (n2 > n1) {
+                    mb = n2;
+                    mc = n1;
+                } else {
+                    mb = n1;
+                    mc = n2;
+                }
+                break;
+            case n1 == n2 && n1 == n3:
+                ma = n1;
+                mb = n2;
+                mc = n3;
+
+                break;
+
+            default:
+                ma = 0
+                mb = 0
+                mc = 0
+                break;
+        }
+
+        document.getElementById("aluno").innerHTML = aluno;
+        document.getElementById("n1").innerHTML = n1;
+        document.getElementById("n2").innerHTML = n2;
+        document.getElementById("n3").innerHTML = n3;
+        document.getElementById("situacao").innerHTML = situacao;
+        document.getElementById("ndecre").innerHTML = ma + " , " + mb + " , " + mc;
+
+    </script>
+</body>
+
+</html>

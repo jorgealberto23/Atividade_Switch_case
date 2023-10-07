@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>atividade 3</title>
+</head>
+
+<body>
+    <h1>Seja Bem Vindo ao Flash Food</h1>
+    <h2>
+        <p> Pedido:<span id="Pedido"></span></p>
+    </h2>
+    <h2>
+        <p> Preço:<span id="Preço"></span></p>
+    </h2>
+    
+
+    <script>
+        let Pedido = prompt("Digite o seu pedido (1 Big Super Sanduba, 2 Quase Super Sanduba, 3 Mirradus Sanduba")
+        let Preço = 0
+
+        switch (Pedido) {
+            case "1":
+            Preço = "5,00"
+              Pedido =  "Big Super Sanduba" + ":" + "2 Hambúrgueres, queijo, batata frita e refrigerante" 
+                break;
+                case "2":
+            Preço = "3,00"
+              Pedido =  "Quase Super Sanduba" + ":" + "1 Hambúrguer, batata frita e refrigerante " 
+                break;
+                case "3":
+            Preço = "1,50"
+              Pedido =  "Mirradus Sanduba" + ":" +"Misto quente e refrigerante"
+                break;
+                
+
+            default:
+            alert("Opção inválida");
+                
+        }
+
+        document.getElementById("Pedido").innerHTML = Pedido;
+        document.getElementById("Preço").innerHTML = Preço;
+      
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

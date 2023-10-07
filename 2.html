@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+
+<body>
+
+    <h1>Pessoas e seus Pesos</h1>
+    <h2>
+        <p>Nome da Primeira Pessoa:<span id="peso1"></span></p>
+        <p>Peso da Primeira Pessoa:<span id="nome1"></span></p>
+        <p>Nome da Segunda Pessoa:<span id="peso2"></span></p>
+        <p>Peso da Segunda Pessoa:<span id="nome2"></span></p>
+        <p>Nome da Terceira Pessoa:<span id="peso3"></span></p>
+        <p>Peso da Terceira Pessoa:<span id="nome3"></span></p>
+        <p>Pesos em ordem Decrescentes:<span id="ndecre"></span></p>
+    </h2>
+    
+
+    <script>
+
+        let nome1 = prompt("Digite o nome da Primeira Pessoa")
+        let peso1 = Number(prompt("Digite o peso da Primeira Pessoa"))
+        let nome2 = prompt("Digite o nome da Segunda Pessoa")
+        let peso2 = Number(prompt("Digite o peso da Segunda Pessoa"))
+        let nome3 = prompt("Digite o nome da Terceira Pessoa")
+        let peso3 = Number(prompt("Digite o peso da Terceira Pessoa"))
+        let Ma;
+        let Mb;
+        let Mc;
+
+        switch (true) {
+            case peso1 >= peso2 && peso1 > peso3:
+                Ma = peso1;
+                if (peso2 > peso3) {
+                    Mb = peso2;
+                    Mc = peso3;
+                } else {
+                    Mb = peso3;
+                    Mc = peso2;
+                }
+                break;
+            case peso2 >= peso1 && peso2 > peso3:
+                Ma = peso2;
+                if (peso1 > peso3) {
+                    Mb = peso1;
+                    Mc = peso3;
+                } else {
+                    Mb = peso3;
+                    Mc = peso1;
+                }
+                break;
+            case peso3 >= peso2 && peso3 > peso1:
+                Ma = peso3;
+                if (peso2 > peso1) {
+                    Mb = peso2;
+                    Mc = peso1;
+                } else {
+                    Mb = peso1;
+                    Mc = peso2;
+                }
+                break;
+
+            case peso1 == peso2 && peso1 == peso3:
+                Ma = peso1;
+                Mb = peso2;
+                Mc = peso3;
+
+                break;
+
+            default:
+                Ma = 0
+                Mb = 0
+                Mc = 0
+                break;
+
+        }
+        document.getElementById("nome1").innerHTML = nome1;
+        document.getElementById("nome2").innerHTML = nome2;
+        document.getElementById("nome3").innerHTML = nome3;
+        document.getElementById("peso1").innerHTML = peso1 + "Kg"
+        document.getElementById("peso2").innerHTML = peso2 + "Kg"
+        document.getElementById("peso3").innerHTML = peso3 + "Kg"
+        document.getElementById("ndecre").innerHTML = Ma + "Kg" + "," + Mb + "Kg" + "," + Mc + "Kg";
+        
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

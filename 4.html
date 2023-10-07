@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 4</title>
+</head>
+
+<body>
+
+    <h1>Data</h1>
+    <h2>
+        <p>Nome do(a) funcionario(a): <span id="nome"></span></p>
+        <p>Total de vendas: <span id="venda"></span></p>
+        <p>Total de comissão: <span id="total"></span></p>
+    </h2>
+    
+    <script>
+
+        let nome = prompt("Digite o nome do(a) funcionario(a)")
+        let venda = Number(prompt("Digite o total de vendas desse(a) funcionario(a)"))
+
+        switch (true) {
+            case venda > 500:
+                total = venda * 2
+                break;
+            case venda > 250:
+                total = venda * 1.5
+                break;
+            default:
+                total = venda
+                break;
+        }
+
+        document.getElementById("total").innerHTML = "R$:" + total;
+        document.getElementById("nome").innerHTML = nome;
+        document.getElementById("venda").innerHTML = venda;
+    </script>
+
+
+</body>
+
+</html>
